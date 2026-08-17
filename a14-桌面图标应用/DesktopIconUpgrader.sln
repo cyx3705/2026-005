@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopIconUpgrader", "src\DesktopIconUpgrader\DesktopIconUpgrader.csproj", "{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopIconUpgrader.SmokeTests", "tests\DesktopIconUpgrader.SmokeTests\DesktopIconUpgrader.SmokeTests.csproj", "{0234D907-81F0-49BD-BE21-F5A3BB79832C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|Any CPU.Build.0 = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|x64.ActiveCfg = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|x64.Build.0 = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|x86.ActiveCfg = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Debug|x86.Build.0 = Debug|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|Any CPU.ActiveCfg = Release|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|Any CPU.Build.0 = Release|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|x64.ActiveCfg = Release|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|x64.Build.0 = Release|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|x86.ActiveCfg = Release|x64
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB}.Release|x86.Build.0 = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|Any CPU.Build.0 = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|x64.ActiveCfg = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|x64.Build.0 = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|x86.ActiveCfg = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Debug|x86.Build.0 = Debug|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|Any CPU.ActiveCfg = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|Any CPU.Build.0 = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|x64.ActiveCfg = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|x64.Build.0 = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|x86.ActiveCfg = Release|x64
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C}.Release|x86.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A58CEDF4-6F7D-4E30-85B7-B7DF07B62FDB} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{0234D907-81F0-49BD-BE21-F5A3BB79832C} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+EndGlobal

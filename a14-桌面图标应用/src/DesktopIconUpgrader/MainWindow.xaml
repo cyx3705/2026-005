@@ -1,0 +1,110 @@
+<Window x:Class="DesktopIconUpgrader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="桌面图标升级器" Width="1180" Height="760" MinWidth="920" MinHeight="600"
+        WindowStartupLocation="CenterScreen" Background="{StaticResource PageBrush}"
+        FontFamily="Segoe UI" UseLayoutRounding="True">
+    <Window.Resources>
+        <Style x:Key="PrimaryButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style x:Key="RestoreButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="{StaticResource RestoreBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="{StaticResource RestoreBrush}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#F8F9FB" />
+            <Setter Property="Foreground" Value="{StaticResource MutedBrush}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+        </Style>
+        <Style TargetType="DataGridRow">
+            <Setter Property="MinHeight" Value="56" />
+            <Setter Property="BorderBrush" Value="#EEF0F4" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="桌面图标升级器" FontSize="26" FontWeight="SemiBold" />
+                <TextBlock Text="自动识别背景、生成多尺寸 ICO，并保留可一键还原的原始基线" Foreground="{StaticResource MutedBrush}" Margin="0,4,0,0" />
+            </StackPanel>
+            <Button Grid.Column="1" Content="刷新扫描" Click="Refresh_Click" VerticalAlignment="Center" />
+        </Grid>
+
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="6" Padding="12" Margin="0,0,0,12">
+            <WrapPanel>
+                <Button Content="一键升级全部" Style="{StaticResource PrimaryButton}" Click="UpgradeAll_Click" Margin="0,0,8,0" />
+                <Button Content="升级选中" Click="UpgradeSelected_Click" Margin="0,0,18,0" />
+                <Button Content="一键还原全部" Style="{StaticResource RestoreButton}" Click="RestoreAll_Click" Margin="0,0,8,0" />
+                <Button Content="还原选中" Click="RestoreSelected_Click" Margin="0,0,18,0" />
+                <Button Content="全选" Click="SelectAll_Click" Margin="0,0,8,0" />
+                <Button Content="清除选择" Click="ClearSelection_Click" Margin="0,0,8,0" />
+                <Button x:Name="CancelButton" Content="取消任务" Click="Cancel_Click" IsEnabled="False" />
+            </WrapPanel>
+        </Border>
+
+        <Grid Grid.Row="2" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="220" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="SummaryText" Text="准备扫描桌面" Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center" />
+            <ProgressBar x:Name="Progress" Grid.Column="1" Height="8" Minimum="0" Maximum="100" Value="0" VerticalAlignment="Center" />
+        </Grid>
+
+        <Border Grid.Row="3" Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="6">
+            <DataGrid x:Name="ItemsGrid" ItemsSource="{Binding Items}" AutoGenerateColumns="False" HeadersVisibility="Column"
+                      GridLinesVisibility="None" BorderThickness="0" Background="White" RowBackground="White"
+                      AlternatingRowBackground="#FBFCFD" CanUserAddRows="False" SelectionMode="Extended" IsReadOnly="False">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="58" />
+                    <DataGridTemplateColumn Header="原图" Width="62" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate><Image Source="{Binding OriginalPreview}" Width="38" Height="38" Stretch="Uniform" /></DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="新图" Width="62" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate><Image Source="{Binding GeneratedPreview}" Width="38" Height="38" Stretch="Uniform" /></DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="名称" Binding="{Binding Name}" Width="190" IsReadOnly="True" />
+                    <DataGridTextColumn Header="类型" Binding="{Binding KindLabel}" Width="105" IsReadOnly="True" />
+                    <DataGridTextColumn Header="背景" Binding="{Binding BackgroundLabel}" Width="90" IsReadOnly="True" />
+                    <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="150" IsReadOnly="True" />
+                    <DataGridTextColumn Header="路径 / 目标" Binding="{Binding TargetPath}" Width="*" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Grid Grid.Row="4" Margin="0,12,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="StatusText" Text="就绪" Foreground="{StaticResource MutedBrush}" TextTrimming="CharacterEllipsis" />
+            <TextBlock Grid.Column="1" Text="ICO: 16 / 20 / 24 / 32 / 40 / 48 / 64 / 96 / 128 / 256 px" Foreground="{StaticResource MutedBrush}" />
+        </Grid>
+    </Grid>
+</Window>
