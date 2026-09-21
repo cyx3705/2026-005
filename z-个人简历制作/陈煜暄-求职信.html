@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>陈煜暄 - 求职信</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --ink: #18212b;
+      --ink-deep: #24313c;
+      --gold: #d2ad61;
+      --gold-deep: #6a5630;
+      --paper: #fbfbf8;
+      --paper-warm: #f0ece3;
+      --muted: #68717a;
+      --rule: #d6d0c4;
+    }
+
+    html {
+      background: #e8ebee;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC", Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 18px 45px rgba(31, 42, 54, 0.18);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 页眉：与简历同色系的深蓝灰条 */
+    .letterhead {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14mm 18mm 9mm;
+      background: var(--ink-deep);
+      color: #f6f4ec;
+    }
+
+    .lh-name {
+      margin: 0;
+      font-size: 27px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .lh-en {
+      margin: 3px 0 0;
+      color: rgba(246, 244, 236, 0.45);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .lh-title {
+      margin: 7px 0 0;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .lh-contact {
+      text-align: right;
+      font-size: 10.5px;
+      line-height: 1.85;
+      color: rgba(246, 244, 236, 0.85);
+    }
+
+    .lh-contact a {
+      color: rgba(246, 244, 236, 0.85);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(210, 173, 97, 0.6);
+    }
+
+    .gold-rule {
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .body-wrap {
+      padding: 12mm 18mm 14mm;
+    }
+
+    .salutation {
+      margin: 0 0 2px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-deep);
+    }
+
+    .greeting {
+      margin: 0 0 10px;
+      text-indent: 2em;
+    }
+
+    p.para {
+      margin: 0 0 10px;
+      text-indent: 2em;
+      text-align: justify;
+    }
+
+    /* 待填岗位/公司名 */
+    .fill {
+      display: inline-block;
+      padding: 0 6px;
+      border-bottom: 1px solid var(--gold);
+      color: var(--gold-deep);
+      font-weight: 700;
+      text-indent: 0;
+    }
+
+    .highlight {
+      color: var(--gold-deep);
+      font-weight: 700;
+    }
+
+    /* 亮点方块 */
+    .points {
+      margin: 12px 0;
+      padding: 11px 15px;
+      background: var(--paper-warm);
+      border-left: 4px solid var(--gold);
+      text-indent: 0;
+    }
+
+    .points ul {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .points li {
+      margin: 3px 0;
+      line-height: 1.7;
+    }
+
+    .points b {
+      color: var(--gold-deep);
+    }
+
+    .closing {
+      margin: 14px 0 0;
+      text-indent: 2em;
+      text-align: justify;
+    }
+
+    .regards {
+      margin: 16px 0 0;
+      line-height: 1.7;
+    }
+
+    .regards span {
+      display: block;
+    }
+
+    .regards .r2 {
+      margin-left: 2em;
+    }
+
+    .sign {
+      margin-top: 20px;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    .sign .who {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink-deep);
+      letter-spacing: 1px;
+    }
+
+    .sign .when {
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+
+    .foot {
+      position: absolute;
+      left: 18mm;
+      right: 18mm;
+      bottom: 10mm;
+      padding-top: 6px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .foot a {
+      color: var(--gold-deep);
+      text-decoration: none;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        background: var(--paper);
+      }
+
+      .page {
+        width: 210mm;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page" aria-label="陈煜暄求职信">
+    <header class="letterhead">
+      <div>
+        <h1 class="lh-name">陈煜暄</h1>
+        <p class="lh-en">Chen Yuxuan</p>
+        <p class="lh-title">求 职 信</p>
+      </div>
+      <div class="lh-contact">
+        宁波工程学院 · 机械设计制造及其自动化<br>
+        cyx3705@outlook.com · 17774113705<br>
+        <a href="https://onehistory.exc0.top/">onehistory.exc0.top</a>
+      </div>
+    </header>
+    <div class="gold-rule"></div>
+
+    <div class="body-wrap">
+      <p class="salutation">尊敬的<span class="fill">贵公司</span>招聘负责人：</p>
+      <p class="greeting">您好！</p>
+
+      <p class="para">我是宁波工程学院机械设计制造及其自动化专业 2027 届本科生陈煜暄。获悉贵公司正在招聘<span class="fill">岗位名称</span>，谨以此信表达我的应聘意愿，并附上个人简历，恳请审阅。</p>
+
+      <p class="para">我的机械设计能力主要来自真实的设备项目，而非课程练习。2024 年 11 月起，我在实验室跟随导师参与技术积累；2025 年 6 月公司正式成立时，我成为<span class="highlight">宁波宁工机器人有限公司初创团队成员之一</span>，负责 AGV 洗轮机与各型 AGV 小车的机械结构设计。</p>
+
+      <div class="points">
+        <ul>
+          <li><b>独立负责的核心项目</b>：AGV 洗轮机。针对毛刷既需竖直升降、又需水平往复的矛盾需求，我采用摇臂圆周运动原理，用单电机同时实现两个方向的复合运动，避免了双套驱动带来的成本与控制复杂度；并通过毛刷带差速比设计实现毛刷自清洁。整机 1675×1114×1140 mm，承载 100 kg，支撑平台高度可调 ±40 mm，兼容不同轮宽与轴距的 AGV 车型。</li>
+          <li><b>以第一发明人身份申请专利 2 项</b>：发明专利《一种洗轮机》（已受理·实审中）、实用新型《一种迎宾机器人》（已受理）。从技术方案到申请文件均由我本人完成。</li>
+        </ul>
+      </div>
+
+      <p class="para">除机械本体之外，我能独立完成 EPLAN 电气原理图设计与西门子 PLC 控制集成，也具备 C#/.NET 上位机与工具开发能力。这意味着我在做结构设计时会<span class="highlight">提前考虑电气安装空间、传感器布局与装配调试需求</span>，与电气、软件同事协作时的沟通成本较低——这是我区别于多数应届机械生的地方。</p>
+
+      <p class="para">目前我在<span class="highlight">浙江省人形机器人创新中心实验室自动化部实习</span>，接触人形机器人方向的自动化设备与实验平台。此外，我通过个人项目库以编号化档案方式管理全部设计项目，每个项目均留存三维模型、二维图纸与设计文档，形成了持续迭代与工程记录的习惯。</p>
+
+      <p class="closing">我的职业期望很明确：在非标自动化与机器人设备方向长期发展，从机械结构设计做起，逐步成长为能够独立负责整机方案的工程师。若能有机会加入贵公司，我会以严谨的工程态度投入其中。恳请予以考虑，期待与您面谈。</p>
+
+      <p class="regards">
+        <span>此致</span>
+        <span class="r2">敬礼！</span>
+      </p>
+
+      <div class="sign">
+        <div class="who">陈煜暄</div>
+        <div class="when">2026 年 9 月</div>
+      </div>
+    </div>
+
+    <p class="foot">随信附：个人简历 · 完整项目档案见 OneHistory 项目库 <a href="https://onehistory.exc0.top/">onehistory.exc0.top</a></p>
+  </article>
+</body>
+</html>

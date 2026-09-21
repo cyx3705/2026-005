@@ -36,3 +36,44 @@ obj/
 # 内置 JDK 是第三方发行版，不是本项目源码
 **/tools/jdk/
 *.user
+
+# HistoryJanus managed begin
+# 本块由 HistoryJanus 按设置 proj.excludesuffixes 自动生成，全库一致。
+# 不要手工编辑块内内容；改清单请用 janus.gitrule.excludes。
+# 块外内容属于本项目自己，Janus 逐字保留。
+bin/
+obj/
+venv/
+.venv/
+__pycache__/
+.vs/
+.idea/
+node_modules/
+.pytest_cache/
+.mypy_cache/
+**/tools/jdk/
+packages/
+*.dll
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.idb
+*.obj
+*.cache
+*.user
+*.suo
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.xlk
+*.autosave
+Thumbs.db
+.DS_Store
+
+# 正式消费快照由发布管线刻意入库，不受上面任何排除项影响。
+!z-*/
+!z-*/**
+# HistoryJanus managed end
